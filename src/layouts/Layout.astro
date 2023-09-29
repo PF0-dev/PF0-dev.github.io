@@ -17,49 +17,29 @@ const resolvedImageWithDomain = new URL(
 
 const { title } = Astro.props;
 
+
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | PF0"
+  : "PF0"
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
-      canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `Astroship - Starter Template for Astro`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "Astroship Homepage Screenshot",
-        },
-      }}
+      description="PF0's personal website!"
+      canonical="https://pf0-dev.github.io/"
     />
   </head>
   <body>
-    <Navbar />
     <slot />
-    <Footer />
-    <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+    <style is:global> /* Improves speed https://css-tricks.com/almanac/properties/c/content-visibility */
       img {
         content-visibility: auto;
       }
