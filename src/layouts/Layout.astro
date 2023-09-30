@@ -1,7 +1,5 @@
 ---
 import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 
 export interface Props {
@@ -39,10 +37,37 @@ const makeTitle = title
   </head>
   <body>
     <slot />
-    <style is:global> /* Improves speed https://css-tricks.com/almanac/properties/c/content-visibility */
-      img {
-        content-visibility: auto;
-      }
-    </style>
   </body>
 </html>
+
+<style is: global>
+/* Improves speed https://css-tricks.com/almanac/properties/c/content-visibility */
+img {
+content-visibility: auto;
+}
+
+html::-webkit-scrollbar {
+    width: 1vw;
+    background-color: #a7edff;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #356f77;
+}
+
+@font-face {font-family: AlphaBeta; src: url('fonts/alphabeta.ttf');} 
+h1 {
+  color: black;
+  font-size: 8vw;
+  text-align: center;
+  font-family: AlphaBeta;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+</style>
