@@ -1,76 +1,40 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import LinkButton from '@components/linkbutton.astro';
 ---
 
 <Layout title="Home"> <!-- Website name here -->
 <h1>Hello, I am PF0</h1>
-  <div class="card" id="card1">
-    <a href="about">About Me</a>
-  </div>
-  
-  <div class="card" id="card2">
-    <a href="portfolio">Portfolio</a>
-  </div>
-  
-  <div class="card" id="card3">
-    <a href="contact">Contact</a>
-  </div>
-  
-  <div class="disclaimer">* This site is under development and incomplete</div>
-  
+<p>Austrlian • Video game enthusiast • Aspiring developer</p>
+  <LinkButton
+    title="About me"
+    link="about"
+    id="1"
+  />
+  <LinkButton
+    title="Portfolio"
+    link="portfolio"
+    id="2"
+  />
+  <LinkButton
+    title="Contact"
+    link="contact"
+    id="3"
+  />
 
 
-  
-<style>
-body {
-  background-image: url('/Aurora-Borealis.jpg');
-}
-
-.card {
-  align-tracks: center;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  margin-top: 5vh;
-  font-size: 8vh;
-  border-color: #79b1c7;
-  border-radius:  10px;
-  text-align: center;
-  background-image: linear-gradient(to bottom right, #79bcd6, #b5eaff);
-  border-style: solid;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.card a {
-	color: white;
-	text-align: center;
-  text-decoration: none;
-}
-.card a:hover {
-  transition: 0.1s ease-in-out;
-  color: #000000;
-}
-
-.disclaimer {
-  text-align: center;
-  padding-top: 5vh;
-}
-</style>
-
-
-
-
-
-
-<script>
-// Makes buttons appear over time
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-document.getElementById('card1').style.opacity = '1';
-await sleep(500)
-document.getElementById('card2').style.opacity = '1';
-await sleep(500)
-document.getElementById('card3').style.opacity = '1';
-</script>
+  <div class="disclaimer">Website by PF0, 2023. All rights reserved.</br>This is currently under development and incomplete</div>
 </Layout>
+
+<style>
+  body {
+    background-image: url('/Aurora-Borealis.jpg');
+    text-align: center
+  }
+
+  
+  .disclaimer {
+    padding-top: 5vh;
+    font-size: 67%;
+  }
+  </style>

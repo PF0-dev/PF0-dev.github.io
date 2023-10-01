@@ -1,0 +1,27 @@
+---
+const { title, link, id } = Astro.props;
+---
+<style>
+  .card {
+      text-align: center;
+      width: 70vw;
+      line-height: 10vw;
+      margin: auto;
+      margin-top: 10vh;
+      font-size: 6vh;
+      border-radius: 8vh;
+      background-color: #2138a8;
+      transition: background-color 0.4s ease-in-out;
+      text-decoration: none;
+      color: white;
+    }
+    .card:hover {
+      background-color: #142787;
+    }
+  </style>
+
+<a href={link}>
+<div class="card" id={`card${id}`}>
+  {title}
+</div>
+</a>
