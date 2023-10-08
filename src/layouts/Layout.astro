@@ -4,9 +4,10 @@ import Navbar from "@components/navbar.astro";
 
 export interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 
 
 const makeTitle = title
@@ -27,7 +28,7 @@ const makeTitle = title
   <meta property="og:title" content={title}>
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:description" content="A full description of the page.">
+  <meta property="og:description" content={description}>
 
 <!--<meta property="og:image" content="https://popupsmart.com/blog/user/pages/365.free-keyword-research-tools/Free-keyword-research-tools-cover.png">
 
@@ -41,7 +42,7 @@ const makeTitle = title
 
     <SEO
       title={makeTitle}
-      description="PF0's personal website!"
+      description={description}
       canonical="https://pf0-dev.github.io/"
     />
   </head>
