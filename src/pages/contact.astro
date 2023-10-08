@@ -1,0 +1,45 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SocialBanner from "@components/socialbanner.astro";
+---
+<script> // Revmoes the layout so banners span full screen
+  const element = document.querySelector('.layout');
+  if (element) {
+    element.classList.remove('layout');
+  }
+</script>
+
+<style>
+p {
+    text-align: center;
+    padding-bottom: 10vh;
+}
+</style>
+
+<Layout title="Contact">
+  <h1>Contact</h1>
+  <p>Have an innovative idea, proposition or simpily want to chat.<br/> Peek down and hit me up on my socials: I try to check them often</p>
+  
+  <SocialBanner
+    user="PF0"
+    link="https://discordapp.com/users/394603391290048533"
+    profileImg="/socials/discord.png"
+    color="#c7c55d"
+    platform="Discord"
+  />
+  
+  <SocialBanner
+    user="placeholder@what.com"
+    link=""
+    profileImg="/socials/email.png"
+    color="#c75d6f"
+    platform="Email"
+  />
+  
+  <SocialBanner
+    user="PF0-dev"
+    link="https://github.com/PF0-dev"
+    profileImg="/socials/github.png"
+    color="lime"
+    platform="Github"
+  />

@@ -1,0 +1,50 @@
+---
+const { user, link, profileImg, color, platform } = Astro.props;
+---
+
+<style define:vars={{ color }}>
+* {
+  text-align: center;
+}
+
+  .banner {
+    user-select: none;
+    background-color: var(--color);
+    width: 100%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    font-family: 'Arial', monospace;
+    font-size: 5vh;
+    color: white;
+    overflow: hidden;
+    font-weight: bold;
+    border-top: solid black 5px;
+  }
+  .banner img {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 20vw;
+    border: solid black 5px;
+    transition: 0.2s;
+  }
+  .banner img:hover {
+    border: solid rgb(47, 53, 145) 5px;
+  }
+  .platform {
+    font-size: 3vh;
+    opacity: 50%;
+}
+</style>
+
+  <div class="banner">
+    
+    {user}<br>
+    <a href={link} target="_blank">
+      <img src={profileImg}>
+    </a>
+    <div class="platform">
+      on {platform}
+    </div>
+
+  </div>
+

@@ -1,0 +1,57 @@
+---
+const { title } = Astro.props;
+---
+<style>
+.nav {
+    font-family: 'Arial', monospace;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #252535;
+    padding-right: 1vw;
+    padding-left 1vw;
+    height: 48px;
+    font-weight: bold;
+    text-align: center;
+   }
+   /*.nav img {
+    height: 48px;
+    float: left;
+    <img src="/favicon.ico">
+   }*/
+   .nav .left {
+    float: left;
+   }
+
+   .nav a {
+    float: right;
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+   }
+   .nav a:hover {
+    background-color: #b0fae5;
+    color: black;
+   }
+
+/*
+.nav img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    align-content: center;
+   }
+*/  
+</style>
+
+<div class="nav">
+    <div class="left">
+  <a class="left" href="/">Home</a>
+  </div>
+  <a href="portfolio">Portfolio</a>
+  <a href="contact">Contact</a>
+  <a href="about">About</a>
+</div>
+

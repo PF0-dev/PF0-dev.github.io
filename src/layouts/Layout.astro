@@ -1,6 +1,6 @@
 ---
 import { SEO } from "astro-seo";
-import "@fontsource-variable/inter/index.css";
+import Navbar from "@components/navbar.astro";
 
 export interface Props {
   title: string;
@@ -21,13 +21,16 @@ const makeTitle = title
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta property="og:image" content="/favicon.ico">
     <meta name="generator" content={Astro.generator} />
     <SEO
       title={makeTitle}
       description="PF0's personal website!"
       canonical="https://pf0-dev.github.io/"
+      openGraph.basic.image="/favicon.ico"
     />
   </head>
+  <Navbar/>
   <body>
     <div class="layout">
       <slot />
@@ -53,15 +56,16 @@ body {
   margin: 0;
   background-size: 100% 100%;
   background-attachment: fixed;
-  background-color: #2e2e35;
+  background-color: #374147;
 }
 .layout {
-  max-width: 68.75rem;
+  max-width: 40rem;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10vh;
 }
-html {
+html, p {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
@@ -77,8 +81,11 @@ html {
   src: url('/fonts/alphabeta.ttf');
 } 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   font-family: AlphaBeta;
+}
+p {
+  font-size: 1.34rem;
 }
 </style>

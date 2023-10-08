@@ -4,21 +4,31 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 import LinkButton from '@components/linkbutton.astro';
 ---
 
+<script> // Revmoes the layout so banners span full screen
+  const element = document.querySelector('.layout');
+  if (element) {
+    element.classList.remove('layout');
+  }
+</script>
+
 <Layout title="Page not found"> <!-- Website name here -->
 <h1>Page not found<h1>
+<img src="/404.jpg">
 <p>The page {canonicalURL} dosent exist Make sure it is spelt correctly, try a diffrent URL or return home</p>
+
   <LinkButton
   title="Home"
   link="/"
   id="1"
 />
 </Layout>
-
 <style>
 body {
   text-align: center;
+}
+img {
+   width: 30vw;
+}
+</style>
 
-.url {
-  text-decoration: link;
-}
-}
+

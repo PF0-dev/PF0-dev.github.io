@@ -3,6 +3,13 @@ import Layout from "@layouts/Layout.astro";
 import LinkButton from '@components/linkbutton.astro';
 ---
 
+<script> // Revmoes the layout so banners span full screen
+  const element = document.querySelector('.layout');
+  if (element) {
+    element.classList.remove('layout');
+  }
+</script>
+
 <Layout title="Home"> <!-- Website name here -->
 <h1>Hello, I am PF0</h1>
 <p>Austrlian • Video game enthusiast • Aspiring developer</p>
