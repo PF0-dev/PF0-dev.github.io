@@ -27,7 +27,14 @@ const makeTitle = title
       title={makeTitle}
       description="PF0's personal website!"
       canonical="https://pf0-dev.github.io/"
-      openGraph.basic.image="https://pf0-dev.github.io/favicon.ico"
+      openGraph="https://pf0-dev.github.io/favicon.ico"
+      openGraph={{
+        basic: {
+          title: "A Very Descriptive Title",
+          type: "image/x-icon",
+          image: "https://pf0-dev.github.io/favicon.ico",
+        }
+      }}
     />
   </head>
   <Navbar/>
